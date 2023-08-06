@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Using bootstrap for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        input[type="number"] {
+            caret-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Bored API Interface</h1>
+        <a href="http://www.boredapi.com/documentation">(http://www.boredapi.com/documentation)</a>
+        <br>
+        <br>
+        <div class="form-group">
+            <h3>Activity Type:</h3>
+            <div class="btn-group-toggle" data-toggle="buttons">
+                <!-- Available types in bored api docs -->
+                <label class="btn btn-secondary">
+                    <input type="checkbox" name="activityType" value="education"> Education
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="checkbox" name="activityType" value="recreational"> Recreational
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="checkbox" name="activityType" value="social"> Social
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="checkbox" name="activityType" value="diy"> DIY
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="checkbox" name="activityType" value="charity"> Charity
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="checkbox" name="activityType" value="cooking"> Cooking
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="checkbox" name="activityType" value="relaxation"> Relaxation
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="checkbox" name="activityType" value="music"> Music
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="checkbox" name="activityType" value="busywork"> Busywork
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h3>Price Range:</h3>
+            <label for="priceMin">Min:</label>
+            <!-- input type number where user can only change value from arrow buttons -->
+            <input type="number" class="form-control" id="priceMin" onkeydown="return false" placeholder="Min" min="0"
+                max="1" step="0.1" value="0">
+            <label for="priceMax">Max:</label>
+            <!-- input type number where user can only change value from arrow buttons -->
+            <input type="number" class="form-control" id="priceMax" onkeydown="return false" placeholder="Max" min="0"
+                max="1" step="0.1" value="1">
+        </div>
+
+        <div class="form-group">
+            <h3>Accessibility Range:</h3>
+            <label for="accessibilityMin">Min:</label>
+            <!-- input type number where user can only change value from arrow buttons -->
+            <input type="number" class="form-control" id="accessibilityMin" onkeydown="return false" placeholder="Min"
+                min="0" max="1" step="0.1" value="0">
+            <label for="accessibilityMax">Max:</label>
+            <!-- input type number where user can only change value from arrow buttons -->
+            <input type="number" class="form-control" id="accessibilityMax" onkeydown="return false" placeholder="Max"
+                min="0" max="1" step="0.1" value="1">
+        </div>
+
+        <button type="button" class="btn btn-primary" id="generateButton">Generate Random Activity</button>
+
+        <div class="mt-4">
+            <h3 id="activity-title"></h3>
+            <div class="spinner-border text-primary d-none" role="status" id="spinner"></div>
+            <span id="activity-text"></span>
+        </div>
+    </div>
+    <!-- bootstrap dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
